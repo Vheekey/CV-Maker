@@ -38,18 +38,8 @@ class Controller extends BaseController
                 'corporation' => $request->corporation,
                 'cert_year' => $request->cert_year,
         ]);
-        // return session('cert_title');
-
         $string = implode(" / ",$request->industry_skill);
         session(['industry_skill' => $string]);
-
-        // if (Request::get('mycheckbox')) {
-        //     // Do anything here
-        // }
-
-        // foreach($request->date_from as $checkDate){
-        //     if(empty($checkDate))
-        // }
 
         return view('view-pdf');
 

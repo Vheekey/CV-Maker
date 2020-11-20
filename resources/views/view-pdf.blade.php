@@ -33,8 +33,13 @@
                     <span class="mr-5"><i class="fas fa-phone mr-1" style="color:#C71585;"></i> {{ Session::get('phone_number')}} </span>
                     <span class="mr-3"><i class="fas fa-envelope mr-1" style="color:#C71585;"></i> <a style="color:black" href="mailto:{{ Session::get('email')}}"> {{ Session::get('email')}} </a> </span>
                     <span class="mr-3"><i class="fas fa-map-marker mr-1" style="color:#C71585;"></i> {{ Session::get('location')}} </span> <br>
+                    @if (Session::get('linkedin'))
                     <span class="mr-3"><i class="fa fa-linkedin mr-1" style="color:#C71585;"></i> <a style="color:black" href="{{ Session::get('linkedin')}}">{{ Session::get('linkedin')}}</a> </span>
+                    @endif
+                    
+                    @if (Session::get('github'))
                     <span class="mr-3"><i class="fa fa-github mr-1" style="color:#C71585;"></i> <a style="color:black" href="{{ Session::get('github')}}"> {{ Session::get('github')}} </a> </span>
+                    @endif
                 </div>
 
                 <div class="mt-3 row" style="font-size:12px;">
