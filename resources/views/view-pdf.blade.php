@@ -16,8 +16,7 @@
         <!-- js -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="{{asset("js/html2pdf.bundle.min.js")}}"></script>
-
+        <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
         <title>CV Maker</title>
 
     </head>
@@ -34,8 +33,13 @@
                     <span class="mr-5"><i class="fas fa-phone mr-1" style="color:#C71585;"></i> {{ Session::get('phone_number')}} </span>
                     <span class="mr-3"><i class="fas fa-envelope mr-1" style="color:#C71585;"></i> <a style="color:black" href="mailto:{{ Session::get('email')}}"> {{ Session::get('email')}} </a> </span>
                     <span class="mr-3"><i class="fas fa-map-marker mr-1" style="color:#C71585;"></i> {{ Session::get('location')}} </span> <br>
+                    @if (Session::get('linkedin'))
                     <span class="mr-3"><i class="fa fa-linkedin mr-1" style="color:#C71585;"></i> <a style="color:black" href="{{ Session::get('linkedin')}}">{{ Session::get('linkedin')}}</a> </span>
+                    @endif
+                    
+                    @if (Session::get('github'))
                     <span class="mr-3"><i class="fa fa-github mr-1" style="color:#C71585;"></i> <a style="color:black" href="{{ Session::get('github')}}"> {{ Session::get('github')}} </a> </span>
+                    @endif
                 </div>
 
                 <div class="mt-3 row" style="font-size:12px;">
